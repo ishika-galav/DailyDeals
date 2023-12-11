@@ -1,0 +1,13 @@
+server:
+  port: 8585
+ 
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: Security-service
+          uri: http://localhost:9010
+          predicates:
+            - Path=/**
